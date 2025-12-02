@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Check the platform
+if [[ "$(uname -s)" == "Darwin" ]] && [[ "$(uname -m)" == "arm64" ]]; then
+    echo "Building Docker container..."
+    ./docker-build-container.sh
+else
+    echo "Building Podman container..."
+    ./podman-build-container.sh
+fi

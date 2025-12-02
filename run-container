@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Check the platform
+if [[ "$(uname -s)" == "Darwin" ]] && [[ "$(uname -m)" == "arm64" ]]; then
+    echo "Running Docker container..."
+    ./docker-run-container.sh
+else
+    echo "Running Podman container..."
+    ./podman-run-container.sh
+fi
